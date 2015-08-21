@@ -10,6 +10,10 @@ __author__ = 'cpn'
 """
 
 
+class Event:
+    KEYPRESS = 'KEYPRESS'
+
+
 def coroutine(function):
     @functools.wraps(function)
     def wrapper(*args, **kwargs):
@@ -17,7 +21,6 @@ def coroutine(function):
         next(generator)
         return generator
     return wrapper
-
 
 
 @coroutine
